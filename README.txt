@@ -1,0 +1,1 @@
+Useless Redmine plugin
