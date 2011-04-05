@@ -20,7 +20,7 @@ class DsObserver <  ActiveRecord::Observer
   end
   def split(s, limit = 120)
     s.split(/\n|\r\n/).inject([]) do |ls, l|
-      ls += split_line(l, limit)
+      ls += l =~ /^>/ ? [l] : split_line(l, limit)
     end
   end
 

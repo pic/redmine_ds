@@ -42,6 +42,14 @@ class DsObserverTest < ActiveSupport::TestCase
                   'potrebbe andare',
                   'meglio'],
                   o.split("ciao bello, come te la passi oggi?\r\nmah\r\npotrebbe andare meglio", 12)
+
+    assert_equal ['ciao bello, come',
+                  'te la passi oggi?',
+                  '> mah (doesn\'t touch quoted lines, I hope)',
+                  'potrebbe andare',
+                  'meglio'],
+                  o.split("ciao bello, come te la passi oggi?\r\n> mah (doesn't touch quoted lines, I hope)\r\npotrebbe andare meglio", 12)
+
   end
 
 
