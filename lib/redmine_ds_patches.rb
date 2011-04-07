@@ -8,7 +8,7 @@ module TimelogHelper
 end
 
 class Tracker
-  def name
-    'Issue'
-  end
+  #def name
+  #  'Issue'
+  #end
 end
