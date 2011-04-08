@@ -3,7 +3,7 @@ require 'redmine'
 ActiveRecord::Base.observers << DsObserver
 config.to_prepare do
   require_dependency 'redmine_ds_patches'
-  unless config.action_controller.perform_caching
+  unless config.cache_classes
     DsObserver.instance.reload_observer
   end
 end
